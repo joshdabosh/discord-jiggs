@@ -4,6 +4,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
 
+
 class User:
 
     def __init__(self, client, config):
@@ -30,8 +31,8 @@ class User:
         if not self.users_ref:
             self.build()
 
-        return self.users_ref.child(uid+'/username').get()
-	
+        return self.users_ref.child(uid + '/username').get()
+
     def set_username(self, uid, username):
         if not self.users_ref:
             self.build()
@@ -60,6 +61,7 @@ class User:
                 username_list.append(users[uid]['username'])
 
         return username_list
+
 
 def load(client, config):
     return User(client, config)

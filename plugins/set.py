@@ -2,8 +2,7 @@ class SetSession:
     def __init__(self, client, config):
         self.client = client
         self.config = config
-	
-    
+
     async def respond(self, message):
         conversation = message.channel
         author = message.author
@@ -15,8 +14,9 @@ class SetSession:
             return
 
         await self.client.send(author.id, conversation)
-        
-        uid = "d"+str(author.id)
+
+        uid = "d" + str(author.id)
+
 
 def load(client, config):
     return SetSession(client, config)

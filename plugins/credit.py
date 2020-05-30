@@ -5,12 +5,13 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
 
+
 class Credit:
 
     def __init__(self, client, config):
         self.client = client
         self.config = config
-            
+
         self.users_ref = None
 
     def build(self):
@@ -25,7 +26,7 @@ class Credit:
         if not self.users_ref:
             self.build()
 
-        credit = self.users_ref.child(uid+'/credit').get()
+        credit = self.users_ref.child(uid + '/credit').get()
         if not credit:
             self.init_credit(uid)
             return 0
@@ -54,16 +55,17 @@ class Credit:
     def refresh(self, uid):
         if not self.users_ref:
             self.build()
-                    
-        current = int(time.time()/86400)
-        daily = self.users_ref.child(uid+'/daily').get()
+
+        current = int(time.time() / 86400)
+        daily = self.users_ref.child(uid + '/daily').get()
         if daily != current:
             self.users_ref.child(uid).update({
-                    'daily': current
+                'daily': current
             })
-            
+
             return False
         return True
+
 
 def load(client, config):
     return Credit(client, config)

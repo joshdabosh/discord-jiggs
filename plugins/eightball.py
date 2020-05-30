@@ -1,7 +1,7 @@
-import asyncio, random
+import random
+
 
 class EightBallSession:
-
     answers = [
         "It is certain",
         "It is decidedly so",

@@ -6,8 +6,6 @@ import os
 import sys
 
 import utils
-from command import Command
-
 
 if len(sys.argv) > 1:
     if sys.argv[1].strip() == '-v' or sys.argv[1].strip() == '--verbose':
@@ -20,26 +18,23 @@ else:
 log = logging.getLogger(__name__)
 
 
-
 class Jiggs:
     def __init__(self):
         self.client = discord.Client()
 
-        self.buildConf()
-        self.buildCommands()
-        
+        self.build_conf()
+        self.build_commands()
 
-    def buildConf(self):
+    def build_conf(self):
         self.conf = json.loads(open("conf.json").read())
-        
 
-    def buildCommands(self):
+    def build_commands(self):
         self.commands = dict()
 
         files = self.conf["plugins"]
         for name in files:
             path = os.path.join(os.getcwd(), files[name]["path"])
-            
+
             spec = importlib.util.spec_from_file_location(name, path)
             module = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(module)
@@ -47,7 +42,6 @@ class Jiggs:
             self.commands[name] = module.load(self, files[name])
 
             log.info("Added plugin '%s' to modules list", name)
-
 
     def start(self):
         @self.client.event
@@ -58,7 +52,6 @@ class Jiggs:
         async def on_message(message):
 
             log.info("Message received from %s: %s", message.author, message.content.strip())
-
 
             if message.author == self.client.user:
                 return
@@ -87,10 +80,8 @@ class Jiggs:
         except KeyError:
             log.critical("No env token found, so not starting")
 
-
     async def send(self, message, channel):
         await channel.send(message)
-        
 
     async def embed(self, embed, channel):
         await channel.send(embed=embed)
