@@ -1,0 +1,34 @@
+{
+	"PREFIX":"/jiggs",
+	"COLOR":"0xff85a2",
+	"plugins":{
+		"hello":{
+			"path":"plugins/hello.py"
+		},
+		"help":{
+			"path":"plugins/help.py",
+			"commands":{
+				"8ball": "Fortunes and advice.",
+				"about": "General information",
+				"hello": "Jiggs says hello.",
+				"help": "Usage and commands list",
+				"set": "Set Jiggs username"
+			}
+		},
+		"about":{
+			"path":"plugins/about.py"
+		},
+		"8ball":{
+			"path":"plugins/eightball.py"
+		},
+		"set":{
+			"path":"plugins/set.py"
+		},
+		"credit":{
+			"path":"plugins/credit.py"
+		},
+		"user":{
+			"path":"plugins/user.py"
+		}
+	}
+}
