@@ -7,6 +7,10 @@ import sys
 
 import utils
 
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import db
+
 if len(sys.argv) > 1:
     if sys.argv[1].strip() == '-v' or sys.argv[1].strip() == '--verbose':
         logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(message)s')
@@ -24,6 +28,14 @@ class Jiggs:
 
         self.build_conf()
         self.build_commands()
+
+        path = os.path.join("serviceAccount.json")
+        cred = credentials.Certificate(path)
+        firebase_admin.initialize_app(cred, {
+            'databaseURL': open("dburl.txt").read()
+        })
+
+        self.firebaseRef = db.reference('/')
 
     def build_conf(self):
         self.conf = json.loads(open("conf.json").read())
