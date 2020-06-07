@@ -14,7 +14,7 @@ class User:
         self.users_ref = None
 
     def build(self):
-        self.users_ref = self.client.plugins['firebase'].ref.child('users')
+        self.users_ref = self.client.firebaseRef.child("users")
 
     def get_uid(self, username):
         if not self.users_ref:

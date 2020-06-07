@@ -15,7 +15,7 @@ class Credit:
         self.users_ref = None
 
     def build(self):
-        self.users_ref = self.client.plugins['firebase'].ref.child('users')
+        self.users_ref = self.client.firebaseRef.child('users')
 
     def init_credit(self, uid):
         self.users_ref.child(uid).update({

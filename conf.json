@@ -29,6 +29,15 @@
 		},
 		"user":{
 			"path":"plugins/user.py"
+		},
+		"self":{
+			"path":"plugins/self.py"
+		},
+		"daily":{
+			"path":"plugins/daily.py"
+		},
+		"slots":{
+			"path":"plugins/slots.py"
 		}
 	}
 }
