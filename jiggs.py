@@ -59,6 +59,7 @@ class Jiggs:
         @self.client.event
         async def on_ready():
             log.info("Logged in successfully!")
+            await self.client.change_presence(activity=discord.Game(f"slots on {len(self.client.guilds)} server" + ("s" if len(self.client.guilds) > 1 else "")))
 
         @self.client.event
         async def on_message(message):
@@ -86,6 +87,10 @@ class Jiggs:
 
             else:
                 return
+
+        @self.client.event
+        async def on_guild_join(guild):
+            await self.client.change_presence(activity=discord.Game(f"slots on {len(self.client.guilds)} server" + ("s" if len(self.client.guilds) > 1 else "")))
 
         try:
             self.client.run(os.environ["JIGGS_TOKEN"])

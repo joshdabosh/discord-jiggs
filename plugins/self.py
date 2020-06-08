@@ -12,7 +12,7 @@ class SelfSession:
         
         if not username:
             response = 'You do not have a username. Create one with the **set** method.'
-            await self.client.send(response)
+            await self.client.send(response, conversation)
             return
 
         
