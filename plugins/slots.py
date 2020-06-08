@@ -49,10 +49,11 @@ class SlotsSession:
             return
 
         uid = 'd' + str(author.id)
-        username = self.client.commands['user'].get_username(uid)
+        self.username = self.client.commands['user'].get_username(uid)
+        username = self.username
 
         if not username:
-            response = 'You do not have a username. Create one with the <b>set</b> method.'
+            response = 'You do not have a username. Create one with the **set** method.'
             await self.client.send(message, conversation)
             return
 

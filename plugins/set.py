@@ -32,7 +32,7 @@ class SetSession:
             err = 'That\'s your current username, silly!'
 
         elif new in username_list:
-            err = 'Sorry, <b>{}</b> is already taken.'.format(new)
+            err = 'Sorry, **{}** is already taken.'.format(new)
 
         if err != "":
             await self.client.send(err, conversation)
