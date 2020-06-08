@@ -9,3 +9,6 @@ serviceAccount.json
 
 dburl.txt
 
+Dockerfile
+
+env.file
