@@ -12,7 +12,7 @@ class HelpSession:
 
         sorted_dict = {}
         for i in sorted(self.config['commands']):
-            sorted_dict[i] = self.client.conf['commands'][i]
+            sorted_dict[i] = self.config['commands'][i]
 
         self.usage = discord.Embed(title="Commands that Jiggs understands:", color=int(self.client.conf["COLOR"], 16))
 
