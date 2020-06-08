@@ -9,10 +9,15 @@ class HelpSession:
         self.build_usage()
 
     def build_usage(self):
-        self.usage = discord.Embed(title=("Commands that Jiggs understands:".format(self.client.conf['PREFIX'])), color=int(self.client.conf["COLOR"], 16))
 
-        for command in self.config['commands']:
-            self.usage.add_field(name=command, value=self.config['commands'][command], inline=False)
+        sorted_dict = {}
+        for i in sorted(self.config['commands']):
+            sorted_dict[i] = self.config['commands'][i]
+
+        self.usage = discord.Embed(title="Commands that Jiggs understands:", color=int(self.client.conf["COLOR"], 16))
+
+        for command in sorted_dict:
+            self.usage.add_field(name=command, value=sorted_dict[command], inline=False)
 
     async def respond(self, message):
         await self.client.embed(self.usage, message.channel)

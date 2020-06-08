@@ -12,7 +12,13 @@
 				"about": "General information",
 				"hello": "Jiggs says hello.",
 				"help": "Usage and commands list",
-				"set": "Set Jiggs username"
+				"set": "Set Jiggs username",
+				"slots": "Gamble away your losses",
+				"view": "View another user's profile",
+				"daily": "Daily bonus",
+				"ladder": "Rolling in money",
+				"list": "See everyone",
+				"self": "View yourself"
 			}
 		},
 		"about":{
