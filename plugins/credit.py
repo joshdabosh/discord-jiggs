@@ -45,7 +45,7 @@ class Credit:
         if not self.users_ref:
             self.build()
 
-        users = self.client.plugins['user'].get_users()
+        users = self.client.commands['user'].get_users()
         credit_list = []
         for uid in users:
             if 'username' in users[uid] and 'credit' in users[uid]:

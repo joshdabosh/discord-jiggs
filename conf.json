@@ -38,6 +38,12 @@
 		},
 		"slots":{
 			"path":"plugins/slots.py"
+		},
+		"ladder":{
+			"path":"plugins/ladder.py"
+		},
+		"view":{
+			"path":"plugins/view.py"
 		}
 	}
 }
