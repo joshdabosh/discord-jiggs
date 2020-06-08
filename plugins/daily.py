@@ -13,7 +13,7 @@ class DailySession:
         username = self.client.commands['user'].get_username(uid)
 
         if not username:
-            response = 'You do not have a username. Create one with the <b>set</b> method.'
+            response = 'You do not have a username. Create one with the **set** method.'
             await self.client.send(response, conversation)
             return
 
