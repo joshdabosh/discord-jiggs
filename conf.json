@@ -8,17 +8,16 @@
 		"help":{
 			"path":"plugins/help.py",
 			"commands":{
-				"8ball": "Fortunes and advice.",
+				"8ball": "Fortunes and advice",
 				"about": "General information",
-				"hello": "Jiggs says hello.",
+				"hello": "Jiggs says hello!",
 				"help": "Usage and commands list",
 				"set": "Set Jiggs username",
-				"slots": "Gamble away your losses",
-				"view": "View another user's profile",
+				"slots": "Gamble away your sorrows",
+				"view": "View other profiles",
 				"daily": "Daily bonus",
-				"ladder": "Rolling in money",
-				"list": "See everyone",
-				"self": "View yourself"
+				"ladder": "The high rollers",
+				"self": "View your profile"
 			}
 		},
 		"about":{
