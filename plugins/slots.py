@@ -54,7 +54,7 @@ class SlotsSession:
 
         if not username:
             response = 'You do not have a username. Create one with the **set** method.'
-            await self.client.send(message, conversation)
+            await self.client.send(response, conversation)
             return
 
         try:
