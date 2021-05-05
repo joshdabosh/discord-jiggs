@@ -3,6 +3,4 @@ services:
     jiggs:
         build: .
         env_file: .env
-        deploy:
-            restart_policy:
-                condition: on-failure
+        restart: on-failure
